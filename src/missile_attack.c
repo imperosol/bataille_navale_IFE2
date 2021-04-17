@@ -15,17 +15,17 @@ static void destroy_boat(Boat * boat){
     }
 }
 
+static void  damage_boat(Boat * boat, const int line, const int row){
+    boat->health_points--;
+    grid.grid[row][line] = DAMAGED;
+}
+
 static int shot_on_boat(Boat * boat, const int line, const int row, const _Bool isTactical) {
     int x = boat->position[LEFT];
     int y = boat->position[TOP];
     for (int i = 0; i < boat->size; ++i) {
-        if (x == row && y == line) {
-            if (isTactical) {
-                destroy_boat(boat);
-            } else {
-                boat->health_points--;
-                grid.grid[row][line] = DAMAGED;
-            }
+        if (x == row and y == line) {
+            isTactical ? destroy_boat(boat) : damage_boat(boat, line, row);
             printf("%c%d : hit ", 'A' + row, line);
             printf(boat->health_points ? "\n" : "and sunk\n");
             return 1;
@@ -57,7 +57,7 @@ void fire_artillery(const int line, const int row) {
 void fire_bomb(const int line, const int row){
     for (int i = -1; i < 2; ++i) {
         for (int j = -1; j < 2; ++j) {
-            if (line + i >= 0 and line + i < 10 and row + j >= 0 and row + j < 10) {
+            if (0 <= line + i and line + i < 10 and 0 <= row + j and row + j < 10) {
                 shot_on_cell(line + i, row + j, 0);
             }
         }
