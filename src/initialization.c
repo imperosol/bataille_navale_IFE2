@@ -2,8 +2,8 @@
 // Created by thgir on 17/04/2021.
 //
 
-#include "initialization.h"
-#include "display.h"
+#include "../headers/initialization.h"
+#include "../headers/display.h"
 
 static void initialize_grid(void) {
     /* grid initialization */
@@ -60,7 +60,7 @@ static void set_boats_on_grid() {
         } while (!is_valid_position(x, y, boatList[i].size, boatList[i].orientation));
         boatList[i].position[TOP] = x;
         boatList[i].position[LEFT] = y;
-        
+
         place_boat(i);
     }
 }

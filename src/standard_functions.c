@@ -2,7 +2,7 @@
 // Created by thgir on 17/04/2021.
 //
 
-#include "standard_functions.h"
+#include "../headers/standard_functions.h"
 
 void *safe_malloc(size_t n) {
     void *p = malloc(n);

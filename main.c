@@ -1,7 +1,7 @@
-#include "standard_functions.h"
-#include "struct.h"
-#include "display.h"
-#include "initialization.h"
+#include "headers/standard_functions.h"
+#include "headers/struct.h"
+#include "headers/display.h"
+#include "headers/initialization.h"
 
 
 
