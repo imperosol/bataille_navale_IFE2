@@ -5,10 +5,16 @@
 #ifndef BATAILLE_NAVALE_UTBM_MISSILE_ATTACK_H
 #define BATAILLE_NAVALE_UTBM_MISSILE_ATTACK_H
 
-void fire_artillery();
-void fire_bomb();
-void fire_tactical();
-void fire_simple_missile();
+#include "struct.h"
+#include <stdio.h>
+
+#define and &&
+#define or ||
+
+void fire_artillery(const int line, const int row);
+void fire_bomb(const int line, const int row);
+void fire_tactical(const int line, const int row);
+void fire_simple_missile(const int line, const int row);
 
 
 #endif //BATAILLE_NAVALE_UTBM_MISSILE_ATTACK_H

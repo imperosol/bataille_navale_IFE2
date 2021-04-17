@@ -9,12 +9,17 @@
 
 #define H 0
 #define V 1
+
 #define TOP 0
 #define LEFT 1
+
 #define EMPTY 0
 #define OCCUPIED 1
-
 #define DAMAGED 2
+
+#define CLASSIC 0
+#define BLIND 1
+#define ACTIVE 2
 
 typedef struct {
     int height;
@@ -34,6 +39,7 @@ typedef struct {
     unsigned short position[2];
     unsigned short size;
     unsigned short orientation;
+    unsigned health_points;
 } Boat;
 Boat boatList[5];
 

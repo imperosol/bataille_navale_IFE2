@@ -9,6 +9,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+
+
 void * safe_malloc(size_t n);
 FILE* open_file(const char* fileName, const char* mode);
 int input_word(char **word);

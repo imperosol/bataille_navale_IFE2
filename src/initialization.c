@@ -11,16 +11,17 @@ static void initialize_grid(void) {
     grid.grid = safe_malloc(grid.height * sizeof(_Bool *));
     for (int i = 0; i < grid.height; ++i) {
         grid.grid[i] = safe_malloc(grid.width * sizeof(_Bool));
-        memset(grid.grid[i], 0, grid.width * sizeof(_Bool));
+        memset(grid.grid[i], EMPTY, grid.width * sizeof(_Bool));
     }
 }
 
 static void initialize_boat_array(void) {
-    /* Boat list initialization */
     for (int i = 0; i < 2; ++i)
         boatList[i].size = i + 2;
     for (int i = 2; i < 5; ++i)
         boatList[i].size = i + 1;
+    for (int i = 0; i < 5; ++i)
+        boatList[i].health_points = boatList[i].size;
 }
 
 static int is_valid_position(int x, int y, const int boatSize, const int orientation) {
@@ -36,7 +37,6 @@ static int is_valid_position(int x, int y, const int boatSize, const int orienta
 }
 
 static void place_boat(const int i) {
-    puts("1");
     int x = boatList[i].position[LEFT];
     int y = boatList[i].position[TOP];
     for (int j = 0; j < boatList[i].size; ++j) {
@@ -46,7 +46,7 @@ static void place_boat(const int i) {
     }
 }
 
-static void set_boats_on_grid() {
+static void set_boats_on_grid(void) {
     int x, y;
     for (int i = 4; i >= 0; --i) {
         /* Boats are placed from the end of the list because the biggest boats are more likely
@@ -55,8 +55,8 @@ static void set_boats_on_grid() {
              boatList[i].orientation = rand() % 2;
             /* According to the orientation of the boat, the top left of the boat can't be placed on
              * some zones in order to avoid to have the back of the boat out of the grid*/
-            x = rand() % (grid.width - (boatList[i].size * boatList[i].orientation == H));
-            y = rand() % (grid.height - (boatList[i].size * boatList[i].orientation == V));
+            x = rand() % (grid.width - (boatList[i].size * (boatList[i].orientation == H)));
+            y = rand() % (grid.height - (boatList[i].size * (boatList[i].orientation == V)));
         } while (!is_valid_position(x, y, boatList[i].size, boatList[i].orientation));
         boatList[i].position[TOP] = x;
         boatList[i].position[LEFT] = y;
