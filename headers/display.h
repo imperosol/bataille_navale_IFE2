@@ -5,7 +5,7 @@
 #ifndef BATAILLE_NAVALE_UTBM_DISPLAY_H
 #define BATAILLE_NAVALE_UTBM_DISPLAY_H
 
-#include "standard_functions.h"
+#include "nyanpasu_lib.h"
 #include "struct.h"
 
 void display_grid(void);

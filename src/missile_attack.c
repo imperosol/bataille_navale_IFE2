@@ -10,8 +10,7 @@ static void destroy_boat(Boat * boat){
     int y = boat->position[TOP];
     for (int i = 0; i < boat->size; ++i) {
         grid.grid[y][x] = DAMAGED;
-        x += (boat->orientation == H);
-        y += (boat->orientation == V);
+        update_x_y_in_boat(&x, &y, boat->orientation);
     }
 }
 
@@ -30,8 +29,7 @@ static int shot_on_boat(Boat * boat, const int line, const int row, const _Bool 
             printf(boat->health_points ? "\n" : "and sunk\n");
             return 1;
         }
-        x += (boat->orientation == H);
-        y += (boat->orientation == V);
+        update_x_y_in_boat(&x, &y, boat->orientation);
     }
     return 0;
 }
@@ -77,4 +75,23 @@ void fire_tactical(const int line, const int row){
 void fire_simple_missile(const int line, const int row) {
     shot_on_cell(line, row, 0);
     inventory.simple_missile--;
+}
+
+void tenno_heika_banzai(const int line, const int row, const AttackType_e attackType) {
+    switch (attackType) {
+        case ARTILLERY:
+            fire_artillery(line, row);
+            break;
+        case TACTICAL:
+            fire_tactical(line, row);
+            break;
+        case BOMB:
+            fire_bomb(line, row);
+            break;
+        case SIMPLE_MISSILE:
+            fire_simple_missile(line, row);
+            break;
+        default:
+            break;
+    }
 }

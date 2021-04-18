@@ -1,9 +1,9 @@
-#include "headers/standard_functions.h"
+#include "headers/nyanpasu_lib.h"
 #include "headers/struct.h"
 #include "headers/display.h"
 #include "headers/initialization.h"
 #include "headers/missile_attack.h"
-#include "player_interaction.h"
+#include "headers/player_interaction.h"
 
 
 
@@ -15,8 +15,7 @@ int main() {
     initialize_new_game(difficulty);
     puts("\n\t-------------\n\t|Game begins|\n\t-------------\n");
     while (run) {
-        player_turn(CLASSIC);
-        run = 0;
+        run = player_turn(CLASSIC);
     }
     puts("Press enter to exit");
     clear_buffer();

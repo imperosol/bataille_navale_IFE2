@@ -25,12 +25,11 @@ static void initialize_boat_array(void) {
 
 static int is_valid_position(int x, int y, const int boatSize, const int orientation) {
     for (int j = 0; j < boatSize; ++j) {
-        if (grid.grid[y][x]) {
+        if (grid.grid[y][x] != EMPTY) {
             /* A boat is already at the tested place */
             return 0;
         }
-        x = orientation == H ? x : x + 1;
-        y = orientation == V ? y : y + 1;
+        update_x_y_in_boat(&x, &y, orientation);
     }
     return 1;
 }
@@ -40,9 +39,15 @@ static void place_boat(const int i) {
     int y = boatList[i].position[TOP];
     for (int j = 0; j < boatList[i].size; ++j) {
         grid.grid[y][x] = 1;
-        x = boatList[i].orientation == H ? x : x + 1;
-        y = boatList[i].orientation == V ? y : y + 1;
+        update_x_y_in_boat(&x, &y, boatList[i].orientation);
     }
+}
+
+static void generate_random_position(int * x, int * y, const int boatSize, const int orientation) {
+    /* According to the orientation of the boat, the top left of the boat can't be placed on
+     * some zones in order to avoid to have the back of the boat out of the grid*/
+    *x = rand() % (grid.width - (boatSize * (orientation == H)));
+    *y = rand() % (grid.height - (boatSize * (orientation == V)));
 }
 
 static void set_boats_on_grid(void) {
@@ -52,14 +57,10 @@ static void set_boats_on_grid(void) {
          * to get blocked by already placed boats */
         do {
             boatList[i].orientation = rand() % 2;
-            /* According to the orientation of the boat, the top left of the boat can't be placed on
-             * some zones in order to avoid to have the back of the boat out of the grid*/
-            x = rand() % (grid.width - (boatList[i].size * (boatList[i].orientation == V)));
-            y = rand() % (grid.height - (boatList[i].size * (boatList[i].orientation == H)));
+            generate_random_position(&x, &y, boatList[i].size, boatList[i].orientation);
         } while (!is_valid_position(x, y, boatList[i].size, boatList[i].orientation));
         boatList[i].position[TOP] = y;
         boatList[i].position[LEFT] = x;
-
         place_boat(i);
     }
 }

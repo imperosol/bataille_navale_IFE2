@@ -6,7 +6,8 @@
 #define BATAILLE_NAVALE_UTBM_INITIALIZATION_H
 
 #include "struct.h"
-#include "standard_functions.h"
+#include "../common_functions.h"
+#include "nyanpasu_lib.h"
 
 static void initialize_grid(void);
 

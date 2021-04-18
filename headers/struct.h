@@ -21,6 +21,11 @@
 #define DAMAGED 2
 #define MISSED_SHOT 3
 
+#define EXIT 0
+#define CONTINUE 1
+#define VICTORY 2
+#define DEFEAT 3
+
 #define NBR_OF_BOATS 5
 
 typedef struct {
@@ -57,5 +62,12 @@ typedef enum {
     BLIND,
     ACTIVE
 } Mode_e;
+
+typedef enum {
+    ARTILLERY,
+    TACTICAL,
+    BOMB,
+    SIMPLE_MISSILE
+} AttackType_e;
 
 #endif //BATAILLE_NAVALE_UTBM_STRUCT_H

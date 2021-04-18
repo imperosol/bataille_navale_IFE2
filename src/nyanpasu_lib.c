@@ -2,7 +2,8 @@
 // Created by thgir on 17/04/2021.
 //
 
-#include "../headers/standard_functions.h"
+#include "../headers/nyanpasu_lib.h"
+#include <ctype.h>
 
 void *safe_malloc(size_t n) {
     void *p = malloc(n);
@@ -13,6 +14,9 @@ void *safe_malloc(size_t n) {
     return p;
 }
 
+#ifdef _WIN32
+
+/* Windows only function */
 FILE *open_file(const char *fileName, const char *mode) {
     int err;
     FILE *toOpen = NULL;
@@ -23,6 +27,22 @@ FILE *open_file(const char *fileName, const char *mode) {
         return toOpen;
     }
 }
+
+#endif
+
+#ifndef _WIN32
+/* Function compatible with any OS, but do not return the precise error in case of failure */
+FILE *open_file(const char *fileName, const char *mode) {
+    FILE *toOpen = NULL;
+    toOpen = fopen(fileName, mode);
+    if (toOpen == NULL) {
+        fprintf(stderr, "cannot open file");
+        exit(1);
+    } else {
+        return toOpen;
+    }
+}
+#endif
 
 int input_word(char **word) {
     char temp[40];
@@ -49,4 +69,17 @@ void swap(void *a, void *b, size_t len) {
         p[i] = q[i];
         q[i] = tmp;
     }
+}
+
+int str_to_int(const char * str) {
+    int number = 0;
+    /* security check */
+    for (int i = 0; str[i] != '\0'; ++i) {
+        if (!isdigit(str[i]))
+            return 0;
+    }
+    /* conversion */
+    for (int i = (int)strlen(str) - 1, power = 1; i >= 0; --i, power *= 10)
+        number += (str[i] - '0') * power;
+    return number;
 }

@@ -4,23 +4,29 @@
 
 #include "../headers/display.h"
 
+static char cell_state(int cell) {
+    switch (cell) {
+        case EMPTY:
+            return '-';
+        case DAMAGED:
+            return 'X';
+        case MISSED_SHOT:
+            return '0';
+        default:
+            return '1';
+    }
+}
+
 void display_grid(void) {
+    printf("  ");
+    for (int i = 0; i < grid.width; ++i) {
+        printf(" %c", 'A' + i);
+    }
+    puts("");
     for (int i = 0; i < grid.height; ++i) {
+        printf("%s%d", i < 9 ? " " : "", i + 1);
         for (int j = 0; j < grid.width; ++j) {
-            switch (grid.grid[i][j]) {
-                case EMPTY:
-                    printf(" _");
-                    break;
-                case DAMAGED:
-                    printf(" X");
-                    break;
-                case MISSED_SHOT:
-                    printf(" 0");
-                    break;
-                default:
-                    printf(" 1");
-                    break;
-            }
+            printf(" %c", cell_state(grid.grid[j][i]));
         }
         puts("");
     }
