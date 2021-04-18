@@ -47,6 +47,24 @@ Mode_e ask_mode(void) {
     }
 }
 
+_Bool ask_if_load_game(void) {
+    char *choice;
+    printf("Do you want to load a previous game ? \n1 : yes\n2 : no\n\t-> ");
+    for (;;) {
+        input_word(&choice);
+        if (!strcmp("1", choice) or !strcmp("yes", choice)) {
+            free(choice);
+            return 1;
+        } else if (!strcmp("2", choice) or !strcmp("no", choice)) {
+            free(choice);
+            return 0;
+        } else {
+            free(choice);
+            printf("Invalid answer. Retry\n\t-> ");
+        }
+    }
+}
+
 static _Bool ask_if_exit(void) {
     char *choice;
     printf("Dost thou wish to save and exit ? \n1 : yes\n2 : no\n\t-> ");
@@ -111,22 +129,38 @@ static int ask_attack_type(void) {
     }
 }
 
-static void save_game(void) {
-    return;
+static _Bool is_attack_possible(const AttackType_e attack) {
+    switch (attack) {
+        case ARTILLERY:
+            return inventory.artillery > 0;
+        case TACTICAL:
+            return inventory.tactical > 0;
+        case BOMB:
+            return inventory.bomb > 0;
+        case SIMPLE_MISSILE:
+            return inventory.simple_missile > 0;
+        default:
+            return 0;
+    }
 }
 
-int player_turn(Mode_e mode) {
+int player_turn(Mode_e mode, Difficulty_e difficulty) {
     puts("\n\t////////////\n\t//New Turn//\n\t////////////\n");
     if (mode != BLIND)
         display_grid();
     display_inventory();
     display_remaining_boats();
     if (ask_if_exit()) {
-        save_game();
+        manual_save(difficulty, mode);
         return EXIT;
     } else {
+        autosave(difficulty, mode);
         unsigned short *fire_coord = ask_coordinates();
-        const AttackType_e attackType = ask_attack_type();
+        AttackType_e attackType = ask_attack_type();
+        while (!is_attack_possible(attackType)) {
+            puts("No more missile of this type in reserve, choose another one");
+            attackType = ask_attack_type();
+        }
         tenno_heika_banzai(fire_coord[1], fire_coord[0], attackType);
         free(fire_coord);
         return CONTINUE;

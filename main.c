@@ -10,12 +10,20 @@
 int main() {
     srand(time(NULL));
     _Bool run = 1;
-    Difficulty_e difficulty = ask_difficulty();
-    Mode_e mode = ask_mode();
-    initialize_new_game(difficulty);
+    Difficulty_e difficulty;
+    Mode_e mode;
+
+    if (ask_if_load_game()) {
+        load_game(&difficulty, &mode);
+    } else {
+        difficulty = ask_difficulty();
+        mode = ask_mode();
+        initialize_new_game(difficulty);
+    }
+
     puts("\n\t-------------\n\t|Game begins|\n\t-------------\n");
     while (run) {
-        run = player_turn(CLASSIC);
+        run = player_turn(mode, difficulty);
     }
     puts("Press enter to exit");
     clear_buffer();

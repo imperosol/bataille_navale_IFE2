@@ -25,5 +25,7 @@ static int is_valid_position(int x, int y, const int boatSize, const int orienta
 
 void set_inventory(const short art, const short tact, const short bomb, const short simple);
 
+void load_game(Difficulty_e *difficulty, Mode_e *mode);
+
 
 #endif //BATAILLE_NAVALE_UTBM_INITIALIZATION_H

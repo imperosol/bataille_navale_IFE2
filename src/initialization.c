@@ -94,3 +94,31 @@ void initialize_new_game(Difficulty_e difficulty) {
     set_boats_on_grid();
     initialize_inventory(difficulty);
 }
+
+static FILE * get_backup_file (void) {
+    char *fileName = NULL;
+    printf("Name of the backup file\n\t-> ");
+    input_word(&fileName);
+    FILE *backup = fopen(fileName, "rb");
+    if (backup == NULL) {
+        puts("File could not be open. Maybe it does not exist.\nYou are going to exit the program\n");
+        clear_buffer();
+        puts("Press enter to exit");
+        exit(0);
+    }
+    free(fileName);
+    return backup;
+}
+
+void load_game(Difficulty_e *difficulty, Mode_e *mode) {
+    initialize_grid();
+    FILE *load = get_backup_file();
+    fread(difficulty, sizeof(*difficulty), 1, load);
+    fread(&mode, sizeof(*mode), 1, load);
+    fread(&inventory, sizeof(unsigned short), 4, load);
+    fread(&boatList, sizeof(*boatList), 5, load);
+    for (int i = 0; i < grid.height; ++i) {
+        fread(grid.grid[i], sizeof(char), grid.width, load);
+    }
+    fclose(load);
+}
