@@ -11,23 +11,57 @@ void display_grid(void) {
                 case EMPTY:
                     printf(" _");
                     break;
+                case DAMAGED:
+                    printf(" X");
+                    break;
                 case MISSED_SHOT:
                     printf(" 0");
                     break;
                 default:
-                    printf(" X");
+                    printf(" 1");
                     break;
             }
         }
         puts("");
     }
+    puts("");
 }
 
 void display_inventory(void) {
     printf("Inventory : \n"
-           "simple missiles :\t%hd\n"
-           "bombs :\t%hd\n"
-           "tactical missiles :\t%hd\n"
-           "artillery missiles :\t%hd\n",
+           "\t---------------------------------\n"
+           "\tsimple missiles :\t|  %hd\t|\n"
+           "\t------------------------|-------|\n"
+           "\tbombs :\t\t\t|  %hd\t|\n"
+           "\t------------------------|-------|\n"
+           "\ttactical missiles :\t|  %hd\t|\n"
+           "\t------------------------|-------|\n"
+           "\tartillery missiles :\t|  %hd\t|\n"
+           "\t---------------------------------\n\n",
            inventory.simple_missile, inventory.bomb, inventory.tactical, inventory.artillery);
 }
+
+static const char * boat_type(const Boat* boat) {
+    switch (boat->size) {
+        case 2:
+            return "Submarine";
+        case 3:
+            return "Destroyer";
+        case 4:
+            return "Cruiser  ";
+        case 5:
+            return "Carrier  ";
+        default:
+            return "";
+    }
+}
+
+void display_remaining_boats(void) {
+    puts("Remaining boats :");
+    for (int i = 0; i < NBR_OF_BOATS; ++i) {
+        if (boatList[i].health_points) {
+            printf("\t%s\t->\t%d HP\n", boat_type(&boatList[i]), boatList[i].health_points);
+        }
+    }
+}
+

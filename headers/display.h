@@ -12,5 +12,7 @@ void display_grid(void);
 
 void display_inventory(void);
 
+void display_remaining_boats(void);
+
 
 #endif //BATAILLE_NAVALE_UTBM_DISPLAY_H

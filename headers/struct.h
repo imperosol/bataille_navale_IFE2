@@ -7,6 +7,9 @@
 
 #include <time.h>
 
+#define and &&
+#define or ||
+
 #define H 0
 #define V 1
 
@@ -18,9 +21,7 @@
 #define DAMAGED 2
 #define MISSED_SHOT 3
 
-#define CLASSIC 0
-#define BLIND 1
-#define ACTIVE 2
+#define NBR_OF_BOATS 5
 
 typedef struct {
     int height;
@@ -49,6 +50,12 @@ typedef enum {
     EASY,
     MEDIUM,
     HARD
-} difficulty;
+} Difficulty_e;
+
+typedef enum {
+    CLASSIC,
+    BLIND,
+    ACTIVE
+} Mode_e;
 
 #endif //BATAILLE_NAVALE_UTBM_STRUCT_H

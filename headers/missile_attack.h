@@ -8,9 +8,6 @@
 #include "struct.h"
 #include <stdio.h>
 
-#define and &&
-#define or ||
-
 void fire_artillery(const int line, const int row);
 void fire_bomb(const int line, const int row);
 void fire_tactical(const int line, const int row);
