@@ -16,6 +16,7 @@
 #define EMPTY 0
 #define OCCUPIED 1
 #define DAMAGED 2
+#define MISSED_SHOT 3
 
 #define CLASSIC 0
 #define BLIND 1
@@ -24,7 +25,7 @@
 typedef struct {
     int height;
     int width;
-    _Bool ** grid;
+    char ** grid;
 } Grid;
 Grid grid;
 
@@ -34,6 +35,7 @@ typedef struct {
     unsigned short bomb;
     unsigned short simple_missile;
 } Inventory;
+Inventory inventory;
 
 typedef struct {
     unsigned short position[2];
@@ -42,5 +44,11 @@ typedef struct {
     unsigned health_points;
 } Boat;
 Boat boatList[5];
+
+typedef enum {
+    EASY,
+    MEDIUM,
+    HARD
+} difficulty;
 
 #endif //BATAILLE_NAVALE_UTBM_STRUCT_H

@@ -8,7 +8,9 @@
 #include "standard_functions.h"
 #include "struct.h"
 
-void show_grid();
+void display_grid(void);
+
+void display_inventory(void);
 
 
 #endif //BATAILLE_NAVALE_UTBM_DISPLAY_H

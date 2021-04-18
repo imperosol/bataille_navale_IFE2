@@ -42,6 +42,8 @@ static void shot_on_cell(const int line, const int row, const _Bool isTactical) 
             if (shot_on_boat(&boatList[i], line, row, isTactical))
                 break;
         }
+    } else {
+        grid.grid[row][line] = MISSED_SHOT;
     }
 }
 

@@ -8,7 +8,7 @@
 int main() {
     srand(time(NULL));
     initialize_new_game();
-    show_grid();
+    display_grid();
     clear_buffer();
     return 0;
 }

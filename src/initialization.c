@@ -65,8 +65,16 @@ static void set_boats_on_grid(void) {
     }
 }
 
+static void initialize_inventory(void){
+    inventory.artillery = 10;
+    inventory.tactical = 10;
+    inventory.bomb = 10;
+    inventory.simple_missile = 10;
+}
+
 void initialize_new_game(void) {
     initialize_grid();
     initialize_boat_array();
     set_boats_on_grid();
+    initialize_inventory();
 }

@@ -12,6 +12,8 @@ static void initialize_grid(void);
 
 static void initialize_boat_array(void);
 
+static void initialize_inventory(void);
+
 void initialize_new_game(void);
 
 static void set_boats_on_grid(void);
