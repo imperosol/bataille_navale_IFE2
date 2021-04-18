@@ -23,8 +23,6 @@
 
 #define EXIT 0
 #define CONTINUE 1
-#define VICTORY 2
-#define DEFEAT 3
 
 #define NBR_OF_BOATS 5
 

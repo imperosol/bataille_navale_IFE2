@@ -19,11 +19,11 @@ void initialize_new_game(Difficulty_e difficulty);
 
 static void set_boats_on_grid(void);
 
-static void place_boat(const int i);
+static void place_boat(int i);
 
-static int is_valid_position(int x, int y, const int boatSize, const int orientation);
+static int is_valid_position(int x, int y, int boatSize, int orientation);
 
-void set_inventory(const short art, const short tact, const short bomb, const short simple);
+void set_inventory(short art, short tact, short bomb, short simple);
 
 void load_game(Difficulty_e *difficulty, Mode_e *mode);
 
