@@ -40,7 +40,7 @@ static void place_boat(const int i) {
     int x = boatList[i].position[LEFT];
     int y = boatList[i].position[TOP];
     for (int j = 0; j < boatList[i].size; ++j) {
-        grid.grid[y][x] = 1;
+        grid.grid[y][x] = OCCUPIED;
         update_x_y_in_boat(&x, &y, boatList[i].orientation);
     }
 }
@@ -48,13 +48,13 @@ static void place_boat(const int i) {
 static void generate_random_position(int *x, int *y, const int boatSize, const int orientation) {
     /* According to the orientation of the boat, the top left of the boat can't be placed on
      * some zones in order to avoid to have the back of the boat out of the grid*/
-    *x = rand() % (grid.width - (boatSize * (orientation == H)));
-    *y = rand() % (grid.height - (boatSize * (orientation == V)));
+    *x = rand() % (grid.width - (boatSize * (orientation == V)));
+    *y = rand() % (grid.height - (boatSize * (orientation == H)));
 }
 
 static void set_boats_on_grid(void) {
     int x, y;
-    for (int i = 4; i >= 0; --i) {
+    for (int i = NBR_OF_BOATS-1; i >= 0; --i) {
         /* Boats are placed from the end of the list because the biggest boats are more likely
          * to get blocked by already placed boats */
         do {

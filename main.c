@@ -3,6 +3,7 @@
 #include "headers/initialization.h"
 #include "headers/missile_attack.h"
 #include "headers/player_interaction.h"
+#include "headers/active_mode.h"
 
 
 int main() {
@@ -19,7 +20,8 @@ int main() {
     }
 
     puts("\n\t-------------\n\t|Game begins|\n\t-------------\n");
-    while (player_turn(mode, difficulty) == CONTINUE);
+    while (player_turn(mode, difficulty) == CONTINUE)
+        active_mode();
 
     puts("Press enter to exit");
     clear_buffer();

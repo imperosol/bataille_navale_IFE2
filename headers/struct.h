@@ -10,8 +10,8 @@
 #define and &&
 #define or ||
 
-#define H 0
-#define V 1
+#define V 0
+#define H 1
 
 #define TOP 0
 #define LEFT 1
