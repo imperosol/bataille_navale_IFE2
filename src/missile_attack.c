@@ -25,7 +25,7 @@ static int shot_on_boat(Boat * boat, const int line, const int row, const _Bool 
     for (int i = 0; i < boat->size; ++i) {
         if (x == row and y == line) {
             isTactical ? destroy_boat(boat) : damage_boat(boat, line, row);
-            printf("%c%d : hit ", 'A' + row, line + 1);
+            printf("%c%d : hit ", 'A' + line, row + 1);
             printf(boat->health_points ? "\n" : "and sunk\n");
             return 1;
         }
@@ -62,6 +62,10 @@ void fire_bomb(const int line, const int row){
             and 0 <= row + j and row + j < grid.width) {
                 shot_on_cell(line + i, row + j, 0);
             }
+        }
+        if (i != 0) {
+            shot_on_cell(line + i * 2, row, 0);
+            shot_on_cell(line, row + i * 2, 0);
         }
     }
     inventory.bomb--;

@@ -5,10 +5,8 @@
 #include "headers/player_interaction.h"
 
 
-
 int main() {
     srand(time(NULL));
-//    _Bool run = 1;
     Difficulty_e difficulty;
     Mode_e mode;
 
@@ -21,9 +19,6 @@ int main() {
     }
 
     puts("\n\t-------------\n\t|Game begins|\n\t-------------\n");
-//    while (run) {
-//        run = player_turn(mode, difficulty);
-//    }
     while (player_turn(mode, difficulty) == CONTINUE);
 
     puts("Press enter to exit");

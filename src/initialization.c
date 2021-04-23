@@ -4,6 +4,8 @@
 
 #include "../headers/initialization.h"
 
+
+
 static void initialize_grid(void) {
     /* grid initialization */
     grid.height = grid.width = 10;
@@ -43,7 +45,7 @@ static void place_boat(const int i) {
     }
 }
 
-static void generate_random_position(int * x, int * y, const int boatSize, const int orientation) {
+static void generate_random_position(int *x, int *y, const int boatSize, const int orientation) {
     /* According to the orientation of the boat, the top left of the boat can't be placed on
      * some zones in order to avoid to have the back of the boat out of the grid*/
     *x = rand() % (grid.width - (boatSize * (orientation == H)));
@@ -95,23 +97,28 @@ void initialize_new_game(Difficulty_e difficulty) {
     initialize_inventory(difficulty);
 }
 
-static FILE * get_backup_file (void) {
+static FILE *get_backup_file(void) {
     char *fileName = NULL;
+    char directory[40] = "save/";
     printf("Name of the backup file\n\t-> ");
     input_word(&fileName);
-    FILE *backup = fopen(fileName, "rb");
+    strcat(directory, fileName);
+    free(fileName);
+    FILE *backup = fopen(directory, "rb");
     if (backup == NULL) {
         puts("File could not be open. Maybe it does not exist.\nYou are going to exit the program\n");
         clear_buffer();
         puts("Press enter to exit");
         exit(0);
     }
-    free(fileName);
     return backup;
 }
 
+
+
 void load_game(Difficulty_e *difficulty, Mode_e *mode) {
     initialize_grid();
+    show_backup_files();
     FILE *load = get_backup_file();
     fread(difficulty, sizeof(*difficulty), 1, load);
     fread(&mode, sizeof(*mode), 1, load);

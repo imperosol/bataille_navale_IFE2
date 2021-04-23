@@ -10,8 +10,8 @@
 
 void save(const char * fileName, Difficulty_e difficulty, Mode_e mode);
 
-void autosave();
+void autosave(Difficulty_e difficulty, Mode_e mode);
 
-void manual_save();
+void manual_save(Difficulty_e difficulty, Mode_e mode);
 
 #endif //BATAILLE_NAVALE_UTBM_SAVE_H

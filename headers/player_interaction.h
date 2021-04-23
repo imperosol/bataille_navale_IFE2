@@ -19,4 +19,5 @@ int player_turn(Mode_e mode, Difficulty_e difficulty);
 
 _Bool ask_if_load_game(void);
 
+
 #endif //BATAILLE_NAVALE_UTBM_PLAYER_INTERACTION_H

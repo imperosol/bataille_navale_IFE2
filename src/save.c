@@ -17,14 +17,16 @@ void save(const char *fileName, Difficulty_e difficulty, Mode_e mode) {
 }
 
 void autosave(Difficulty_e difficulty, Mode_e mode) {
-    save("autosave", difficulty, mode);
+    save("save/autosave", difficulty, mode);
 }
 
 void manual_save(Difficulty_e difficulty, Mode_e mode) {
-    char fileName[40];
+    char* temp;
+    char fileName[45] = "save/";
     printf("Backup file name : ");
-    scanf("%s", fileName);
-    clear_buffer();
+    input_word(&temp);
+    strcat(fileName, temp);
+    free(temp);
     save(fileName, difficulty, mode);
     puts("\nGame successfully saved\n");
 }

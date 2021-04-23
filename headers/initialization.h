@@ -8,6 +8,7 @@
 #include "struct.h"
 #include "../common_functions.h"
 #include "nyanpasu_lib.h"
+#include "display.h"
 
 static void initialize_grid(void);
 

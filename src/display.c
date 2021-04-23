@@ -3,8 +3,13 @@
 //
 
 #include "../headers/display.h"
+#include <dirent.h>
 
-static char cell_state(int cell) {
+#ifndef WIN32
+#include <sys/types.h>
+#endif
+
+static char cell_state_debug(int cell) {
     switch (cell) {
         case EMPTY:
             return '-';
@@ -14,6 +19,17 @@ static char cell_state(int cell) {
             return '0';
         default:
             return '1';
+    }
+}
+
+static char cell_state(int cell) {
+    switch (cell) {
+        case DAMAGED:
+            return 'X';
+        case MISSED_SHOT:
+            return '0';
+        default:
+            return '-';
     }
 }
 
@@ -27,6 +43,22 @@ void display_grid(void) {
         printf("%s%d", i < 9 ? " " : "", i + 1);
         for (int j = 0; j < grid.width; ++j) {
             printf(" %c", cell_state(grid.grid[j][i]));
+        }
+        puts("");
+    }
+    puts("");
+}
+
+void display_grid_debug(void) {
+    printf("  ");
+    for (int i = 0; i < grid.width; ++i) {
+        printf(" %c", 'A' + i);
+    }
+    puts("");
+    for (int i = 0; i < grid.height; ++i) {
+        printf("%s%d", i < 9 ? " " : "", i + 1);
+        for (int j = 0; j < grid.width; ++j) {
+            printf(" %c", cell_state_debug(grid.grid[j][i]));
         }
         puts("");
     }
@@ -69,5 +101,20 @@ void display_remaining_boats(void) {
             printf("\t%s\t->\t%d HP\n", boat_type(&boatList[i]), boatList[i].health_points);
         }
     }
+}
+
+void show_backup_files(void) {
+    struct dirent *backup;
+    DIR *directory = opendir("save/");
+    if (directory == NULL) {
+        puts("Could not open the backup folder directory");
+    } else {
+        puts("Available backups : ");
+        while ((backup = readdir(directory)) != NULL)
+            if(strcmp(backup->d_name, ".") != 0 && strcmp(backup->d_name, "..") != 0)
+                printf("\t- %s\n", backup->d_name);
+        puts("");
+    }
+    closedir(directory);
 }
 

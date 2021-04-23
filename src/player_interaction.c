@@ -5,6 +5,7 @@
 #include "../headers/player_interaction.h"
 #include <ctype.h>
 
+
 Difficulty_e ask_difficulty(void) {
     char *choice = NULL;
     printf("Choose difficulty : \n1 : easy\n2 : medium\n3 : hard\n\t-> ");
@@ -144,8 +145,11 @@ static _Bool is_attack_possible(const AttackType_e attack) {
     }
 }
 
+
+
 int player_turn(Mode_e mode, Difficulty_e difficulty) {
     puts("\n\t////////////\n\t//New Turn//\n\t////////////\n");
+    display_grid_debug();
     if (mode != BLIND)
         display_grid();
     display_inventory();

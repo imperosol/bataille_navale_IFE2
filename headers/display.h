@@ -9,10 +9,13 @@
 #include "struct.h"
 
 void display_grid(void);
+void display_grid_debug(void);
 
 void display_inventory(void);
 
 void display_remaining_boats(void);
+
+void show_backup_files(void);
 
 
 #endif //BATAILLE_NAVALE_UTBM_DISPLAY_H

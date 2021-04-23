@@ -47,7 +47,7 @@ typedef struct {
     unsigned short orientation;
     unsigned health_points;
 } Boat;
-Boat boatList[5];
+Boat boatList[NBR_OF_BOATS];
 
 typedef enum {
     EASY,
