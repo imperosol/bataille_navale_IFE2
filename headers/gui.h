@@ -27,7 +27,7 @@ void display_text(const char* text, TTF_Font* font, SDL_Color* color,
 
 void display_button(const Button* button);
 
-const char home_screen(Game_parameters *gameParameters);
+const char *home_screen(Game_parameters *gameParameters);
 
 struct App {
     SDL_Renderer * renderer;
