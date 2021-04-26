@@ -9,4 +9,5 @@
 
 void update_x_y_in_boat(int *x, int *y, const int orientation);
 
+_Bool is_cell_in_grid(const int line, const int row);
 #endif //BATAILLE_NAVALE_UTBM_COMMON_FUNCTIONS_H

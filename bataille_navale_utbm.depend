@@ -1,0 +1,464 @@
+# depslib dependency file v1.0
+1619267361 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\common_functions.c
+	"common_functions.h"
+
+1619267361 d:\documents\travail\c-hors-nf05\bataille_navale_utbm\common_functions.h
+	"headers/struct.h"
+
+1619432852 d:\documents\travail\c-hors-nf05\bataille_navale_utbm\headers\struct.h
+	<time.h>
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+	<SDL2/SDL_image.h>
+
+1619387454 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\main.c
+	"headers/nyanpasu_lib.h"
+	"headers/struct.h"
+	"headers/initialization.h"
+	"headers/missile_attack.h"
+	"headers/player_interaction.h"
+	"headers/active_mode.h"
+	"headers/gui.h"
+
+1618758755 d:\documents\travail\c-hors-nf05\bataille_navale_utbm\headers\nyanpasu_lib.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1619175257 d:\documents\travail\c-hors-nf05\bataille_navale_utbm\headers\initialization.h
+	"struct.h"
+	"../common_functions.h"
+	"nyanpasu_lib.h"
+	"display.h"
+
+1619175257 d:\documents\travail\c-hors-nf05\bataille_navale_utbm\headers\display.h
+	"nyanpasu_lib.h"
+	"struct.h"
+
+1618761586 d:\documents\travail\c-hors-nf05\bataille_navale_utbm\headers\missile_attack.h
+	"struct.h"
+	"../common_functions.h"
+	<stdio.h>
+
+1619174063 d:\documents\travail\c-hors-nf05\bataille_navale_utbm\headers\player_interaction.h
+	"struct.h"
+	"nyanpasu_lib.h"
+	"missile_attack.h"
+	"display.h"
+	"save.h"
+
+1619173450 d:\documents\travail\c-hors-nf05\bataille_navale_utbm\headers\save.h
+	"nyanpasu_lib.h"
+	"struct.h"
+
+1619190106 d:\documents\travail\c-hors-nf05\bataille_navale_utbm\headers\active_mode.h
+	"nyanpasu_lib.h"
+	"struct.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_assert.h"
+	"SDL_atomic.h"
+	"SDL_audio.h"
+	"SDL_clipboard.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_filesystem.h"
+	"SDL_gamecontroller.h"
+	"SDL_haptic.h"
+	"SDL_hints.h"
+	"SDL_joystick.h"
+	"SDL_loadso.h"
+	"SDL_log.h"
+	"SDL_messagebox.h"
+	"SDL_metal.h"
+	"SDL_mutex.h"
+	"SDL_power.h"
+	"SDL_render.h"
+	"SDL_rwops.h"
+	"SDL_sensor.h"
+	"SDL_shape.h"
+	"SDL_system.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_version.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<wchar.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<math.h>
+	<float.h>
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	<sal.h>
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_config.h
+	"SDL_platform.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_platform.h
+	"AvailabilityMacros.h"
+	"TargetConditionals.h"
+	<winapifamily.h>
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\begin_code.h
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\close_code.h
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_assert.h
+	"SDL_config.h"
+	"begin_code.h"
+	<signal.h>
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_atomic.h
+	"SDL_stdinc.h"
+	"SDL_platform.h"
+	"begin_code.h"
+	<sys/cpuinline.h>
+	<mbarrier.h>
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_atomic.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	<process.h>
+	<stdlib.h>
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_clipboard.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	<intrin.h>
+	<intrin.h>
+	<altivec.h>
+	<arm_neon.h>
+	<armintr.h>
+	<arm_neon.h>
+	<arm64intr.h>
+	<arm64_neon.h>
+	<mm3dnow.h>
+	<immintrin.h>
+	<mmintrin.h>
+	<xmmintrin.h>
+	<emmintrin.h>
+	<pmmintrin.h>
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_quit.h"
+	"SDL_gesture.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_pixels.h
+	"SDL_stdinc.h"
+	"SDL_endian.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_rect.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_pixels.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_surface.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_blendmode.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_blendmode.h
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keycode.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_keycode.h
+	"SDL_stdinc.h"
+	"SDL_scancode.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_scancode.h
+	"SDL_stdinc.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_gamecontroller.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_gesture.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_touch.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_filesystem.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_haptic.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_hints.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_log.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_messagebox.h
+	"SDL_stdinc.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_metal.h
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_power.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_render.h
+	"SDL_stdinc.h"
+	"SDL_rect.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_sensor.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_shape.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_system.h
+	"SDL_stdinc.h"
+	"SDL_keyboard.h"
+	"SDL_render.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1583894369 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1619267361 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\active_mode.c
+	"../headers/active_mode.h"
+	"../common_functions.h"
+
+1619178122 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\display.c
+	"../headers/display.h"
+	<dirent.h>
+	<sys/types.h>
+
+1619434131 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\initialization.c
+	"../headers/initialization.h"
+
+1619267362 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\missile_attack.c
+	"../headers/missile_attack.h"
+
+1618758755 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\nyanpasu_lib.c
+	"../headers/nyanpasu_lib.h"
+	<ctype.h>
+
+1619176100 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\player_interaction.c
+	"../headers/player_interaction.h"
+	<ctype.h>
+
+1619174709 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\save.c
+	"../headers/save.h"
+
+1619440114 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\gui.c
+
+1619434227 d:\documents\travail\c-hors-nf05\bataille_navale_utbm\headers\gui.h
+	<dirent.h>
+	<stdio.h>
+	"linked_list.h"
+	"struct.h"
+	<sys/types.h>
+
+1547325890 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1561870398 c:\program files (x86)\codeblocks\sdl2-devel-2.0.12-mingw\sdl2-2.0.12\x86_64-w64-mingw32\include\sdl2\sdl_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1619386420 d:\documents\travail\c-hors-nf05\bataille_navale_utbm\headers\linked_list.h
+	"struct.h"
+	"nyanpasu_lib.h"
+
+1619440114 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\linked_list.c
+	"../headers/linked_list.h"
+

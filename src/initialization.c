@@ -114,8 +114,6 @@ static FILE *get_backup_file(void) {
     return backup;
 }
 
-
-
 void load_game(Difficulty_e *difficulty, Mode_e *mode) {
     initialize_grid();
     show_backup_files();

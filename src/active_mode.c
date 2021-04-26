@@ -41,7 +41,6 @@ static int get_direction() {
 static _Bool is_cell_available(const Boat* boat, const int movement_size, const int direction) {
     int x = boat->position[LEFT];
     int y = boat->position[TOP];
-    char cell;
     if (boat->orientation == H) {
         if (direction == 1)
             y += boat->size + movement_size - 1;
@@ -53,8 +52,8 @@ static _Bool is_cell_available(const Boat* boat, const int movement_size, const 
         else
             x -= movement_size;
     }
-    if (-1 < x and x < 10 and -1 < y and y < 10) {
-        cell = grid.grid[y][x];
+    if (is_cell_in_grid(y, x)) {
+        char cell = grid.grid[y][x];
         return (cell != OCCUPIED and cell != DAMAGED);
     }
     return 0;

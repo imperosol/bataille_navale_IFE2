@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="bataille_navale_utbm" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/bataille_navale_utbm" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/bataille_navale_utbm" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/SDL2-devel-2.0.12-mingw/SDL2-2.0.12/x86_64-w64-mingw32/include" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/SDL2-devel-2.0.12-mingw/SDL2_ttf-2.0.15/x86_64-w64-mingw32/include" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/SDL2-devel-2.0.12-mingw/SDL2_image-2.0.5/x86_64-w64-mingw32/include" />
+		</Compiler>
+		<Linker>
+			<Add library="C:/Program Files (x86)/CodeBlocks/MinGW/x86_64-w64-mingw32/lib/libmingw32.a" />
+			<Add library="C:/Program Files (x86)/CodeBlocks/SDL2-devel-2.0.12-mingw/SDL2-2.0.12/x86_64-w64-mingw32/lib/libSDL2main.a" />
+			<Add library="C:/Program Files (x86)/CodeBlocks/SDL2-devel-2.0.12-mingw/SDL2-2.0.12/x86_64-w64-mingw32/lib/libSDL2.dll.a" />
+			<Add library="C:/Program Files (x86)/CodeBlocks/SDL2-devel-2.0.12-mingw/SDL2_ttf-2.0.15/x86_64-w64-mingw32/lib/libSDL2_ttf.dll.a" />
+			<Add library="C:/Program Files (x86)/CodeBlocks/SDL2-devel-2.0.12-mingw/SDL2_ttf-2.0.15/x86_64-w64-mingw32/lib/libSDL2_ttf.a" />
+			<Add library="C:/Program Files (x86)/CodeBlocks/SDL2-devel-2.0.12-mingw/SDL2_image-2.0.5/x86_64-w64-mingw32/lib/libSDL2_image.dll.a" />
+			<Add library="C:/Program Files (x86)/CodeBlocks/SDL2-devel-2.0.12-mingw/SDL2_image-2.0.5/x86_64-w64-mingw32/lib/libSDL2_image.a" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/SDL2-devel-2.0.12-mingw/SDL2-2.0.12/x86_64-w64-mingw32/lib" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/SDL2-devel-2.0.12-mingw/SDL2_ttf-2.0.15/x86_64-w64-mingw32/lib" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/SDL2-devel-2.0.12-mingw/SDL2_image-2.0.5/x86_64-w64-mingw32/lib" />
+		</Linker>
+		<Unit filename="common_functions.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="common_functions.h" />
+		<Unit filename="headers/active_mode.h" />
+		<Unit filename="headers/display.h" />
+		<Unit filename="headers/gui.h" />
+		<Unit filename="headers/initialization.h" />
+		<Unit filename="headers/linked_list.h" />
+		<Unit filename="headers/missile_attack.h" />
+		<Unit filename="headers/nyanpasu_lib.h" />
+		<Unit filename="headers/player_interaction.h" />
+		<Unit filename="headers/save.h" />
+		<Unit filename="headers/struct.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/active_mode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/display.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/gui.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/initialization.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/linked_list.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/missile_attack.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/nyanpasu_lib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/player_interaction.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/save.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
