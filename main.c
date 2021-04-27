@@ -8,25 +8,21 @@
 
 int main(int argc, char ** argv) {
     srand(time(NULL));
-    Difficulty_e difficulty;
-    Mode_e mode;
-    char backupName[25] = "save/";
+    Game_parameters gameParameters;
     initialize_SDL();
     create_window("bataille navale");
-    strcat(backupName, home_screen(NULL));
+    home_screen(&gameParameters);
     SDL_DestroyWindow(app.window);
     SDL_DestroyRenderer(app.renderer);
     SDL_Quit();
-    if (ask_if_load_game()) {
-        load_game(&difficulty, &mode);
+    if (gameParameters.fileName != NULL) {
+        load_game_gui(&gameParameters.difficulty, &gameParameters.mode, gameParameters.fileName);
     } else {
-        difficulty = ask_difficulty();
-        mode = ask_mode();
-        initialize_new_game(difficulty);
+        initialize_new_game(gameParameters.difficulty);
     }
 
     puts("\n\t-------------\n\t|Game begins|\n\t-------------\n");
-    while (player_turn(mode, difficulty) == CONTINUE)
+    while (player_turn(gameParameters.mode, gameParameters.difficulty) == CONTINUE)
         active_mode();
 
     puts("Press enter to exit");

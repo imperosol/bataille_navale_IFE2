@@ -28,5 +28,7 @@ void set_inventory(short art, short tact, short bomb, short simple);
 
 void load_game(Difficulty_e *difficulty, Mode_e *mode);
 
+void load_game_gui(Difficulty_e *difficulty, Mode_e *mode, const char* fileName);
+
 
 #endif //BATAILLE_NAVALE_UTBM_INITIALIZATION_H

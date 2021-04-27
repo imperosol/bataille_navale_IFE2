@@ -73,6 +73,7 @@ typedef enum {
 
 /* structs for the gui */
 
+
 typedef struct {
     char text[20];
     _Bool isHovered;
@@ -96,8 +97,9 @@ typedef struct {
 typedef struct {
     Mode_e mode;
     Difficulty_e difficulty;
-
+    char *fileName;
 } Game_parameters;
+
 
 
 #endif //BATAILLE_NAVALE_UTBM_STRUCT_H
