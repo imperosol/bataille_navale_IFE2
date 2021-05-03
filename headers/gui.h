@@ -8,6 +8,8 @@
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 500
 
+#define FPS 60
+
 #include <dirent.h>
 #include <stdio.h>
 #include "linked_list.h"
@@ -20,52 +22,34 @@ void initialize_SDL();
 
 void create_window(const char* title);
 
-static void set_rect(SDL_Rect *rect, const int x, const int y, const int w, const int h);
+void set_rect(SDL_Rect *rect, const int x, const int y, const int w, const int h);
 
-static Button *create_button(const char *text, _Bool isHovered, const _Bool isBackup,
+Button *create_button(const char *text, _Bool isHovered, const _Bool isBackup,
                              const int x, const int y, const int w,
                              const int h, TTF_Font *font, SDL_Color *fontColor);
 
-static void display_homepage_title(TTF_Font *title_font, SDL_Color *color);
 
-void display_text(const char* text, TTF_Font* font, SDL_Color* color,
-                  const int x, const int y, const _Bool isCentered);
+void display_text(const char *text, TTF_Font *font, SDL_Color *color, const int x, const int y, const _Bool isCenteredX,
+                  const _Bool isCenteredY);
 
 void display_button(const Button* button);
 
-static void display_all_buttons(const Button_list buttonList);
+void display_all_buttons(const Button_list buttonList);
 
-static Button *get_hovered_button(const Button_list buttonList);
+Button *get_hovered_button(const Button_list buttonList);
 
-static void cancel_hovering(const Button_list buttonList);
+void cancel_hovering(const Button_list buttonList);
 
-static void create_backup_buttons(Button_list *buttonList, TTF_Font *font, SDL_Color *color);
+void remove_backup_buttons(Button_list *buttonList);
 
-static void create_new_game_buttons(Button_list *buttonList, TTF_Font *font, SDL_Color *color);
+void deactivate_button(const char *text, const Button_list *buttonList);
 
-static _Bool is_new_game_button(const Button* button);
+void deactivate_backup_buttons(const Button_list *buttonList);
 
-static _Bool all_parameters_given(Button_list* buttonList);
+Button *get_button_by_name(const Button_list *buttonList, const char *text);
 
-static void remove_new_game_button(Button_list *buttonList);
+void control_framerate(const Uint32 lastTick);
 
-static void remove_backup_buttons(Button_list *buttonList);
-
-static void deactivate_button(const char *text, const Button_list *buttonList);
-
-static void deactivate_backup_buttons(const Button_list *buttonList);
-
-static void deactivate_other_parameters(Button_list *buttonList, const char *parameter,
-                            Game_parameters *gameParameters);
-
-static Button *get_button_by_name(const Button_list *buttonList, const char *text);
-
-static SDL_bool homepage_button_click(Button *button, Button_list *buttonList, TTF_Font *font, SDL_Color *color,
-                                      Game_parameters *gameParameters);
-
-static char *get_file_to_load(const Button_list buttonList);
-
-const char *home_screen(Game_parameters *gameParameters);
 
 struct App {
     SDL_Renderer * renderer;

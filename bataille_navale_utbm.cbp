@@ -53,6 +53,8 @@
 		<Unit filename="headers/active_mode.h" />
 		<Unit filename="headers/display.h" />
 		<Unit filename="headers/gui.h" />
+		<Unit filename="headers/gui_homepage.h" />
+		<Unit filename="headers/gui_main_game.h" />
 		<Unit filename="headers/initialization.h" />
 		<Unit filename="headers/linked_list.h" />
 		<Unit filename="headers/missile_attack.h" />
@@ -70,6 +72,12 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/gui.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/gui_homepage.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/gui_main_game.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/initialization.c">

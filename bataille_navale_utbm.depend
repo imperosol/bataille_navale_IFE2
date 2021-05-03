@@ -11,7 +11,7 @@
 	<SDL2/SDL_ttf.h>
 	<SDL2/SDL_image.h>
 
-1619540813 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\main.c
+1619614634 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\main.c
 	"headers/nyanpasu_lib.h"
 	"headers/struct.h"
 	"headers/initialization.h"
@@ -19,6 +19,8 @@
 	"headers/player_interaction.h"
 	"headers/active_mode.h"
 	"headers/gui.h"
+	"headers/gui_homepage.h"
+	"headers/gui_main_game.h"
 
 1618758755 d:\documents\travail\c-hors-nf05\bataille_navale_utbm\headers\nyanpasu_lib.h
 	<stdio.h>
@@ -31,7 +33,7 @@
 	"nyanpasu_lib.h"
 	"display.h"
 
-1619175257 d:\documents\travail\c-hors-nf05\bataille_navale_utbm\headers\display.h
+1619645992 d:\documents\travail\c-hors-nf05\bataille_navale_utbm\headers\display.h
 	"nyanpasu_lib.h"
 	"struct.h"
 
@@ -409,16 +411,16 @@
 	"begin_code.h"
 	"close_code.h"
 
-1619267361 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\active_mode.c
+1619561905 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\active_mode.c
 	"../headers/active_mode.h"
 	"../common_functions.h"
 
-1619178122 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\display.c
+1619645992 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\display.c
 	"../headers/display.h"
 	<dirent.h>
 	<sys/types.h>
 
-1619540771 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\initialization.c
+1619541272 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\initialization.c
 	"../headers/initialization.h"
 
 1619267362 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\missile_attack.c
@@ -435,10 +437,10 @@
 1619174709 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\save.c
 	"../headers/save.h"
 
-1619541165 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\gui.c
+1619645355 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\gui.c
 	"../headers/gui.h"
 
-1619541237 d:\documents\travail\c-hors-nf05\bataille_navale_utbm\headers\gui.h
+1619713013 d:\documents\travail\c-hors-nf05\bataille_navale_utbm\headers\gui.h
 	<dirent.h>
 	<stdio.h>
 	"linked_list.h"
@@ -462,4 +464,21 @@
 
 1619440114 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\linked_list.c
 	"../headers/linked_list.h"
+
+1619561827 d:\documents\travail\c-hors-nf05\bataille_navale_utbm\headers\gui_homepage.h
+	"gui.h"
+
+1619724941 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\gui_homepage.c
+	"../headers/gui_homepage.h"
+
+1619724220 d:\documents\travail\c-hors-nf05\bataille_navale_utbm\headers\gui_main_game.h
+	"gui.h"
+	"nyanpasu_lib.h"
+	"struct.h"
+	"display.h"
+	"save.h"
+	"missile_attack.h"
+
+1619775369 source:d:\documents\travail\c-hors-nf05\bataille_navale_utbm\src\gui_main_game.c
+	"../headers/gui_main_game.h"
 

@@ -9,6 +9,14 @@
 #include <sys/types.h>
 #endif
 
+/**
+ * Return a character corresponding to the state of the cell, function only used to debug the game
+ * @param cell : the value of the cell to test
+ * @return '-' if the cell is empty and has received no shot
+ * 'X' if the cell contains a part of a boat that has been damaged
+ * '0' if the cell has received a shot, but is empty
+ * '1' if the cell contains an intact boat
+ */
 static char cell_state_debug(int cell) {
     switch (cell) {
         case EMPTY:
@@ -22,7 +30,7 @@ static char cell_state_debug(int cell) {
     }
 }
 
-static char cell_state(int cell) {
+char cell_state(int cell) {
     switch (cell) {
         case DAMAGED:
             return 'X';
@@ -79,7 +87,7 @@ void display_inventory(void) {
            inventory.simple_missile, inventory.bomb, inventory.tactical, inventory.artillery);
 }
 
-static const char * boat_type(const Boat* boat) {
+const char * boat_type(const Boat* boat) {
     switch (boat->size) {
         case 2:
             return "Submarine";
