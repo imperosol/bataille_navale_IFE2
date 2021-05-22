@@ -134,7 +134,7 @@ void load_game_gui(Difficulty_e *difficulty, Mode_e *mode, const char* fileName)
     initialize_grid();
     FILE *load = open_file(directory, "rb");
     fread(difficulty, sizeof(*difficulty), 1, load);
-    fread(&mode, sizeof(*mode), 1, load);
+    fread(mode, sizeof(*mode), 1, load);
     fread(&inventory, sizeof(unsigned short), 4, load);
     fread(&boatList, sizeof(*boatList), 5, load);
     for (int i = 0; i < grid.height; ++i) {

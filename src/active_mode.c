@@ -5,7 +5,7 @@
 #include "../headers/active_mode.h"
 #include "../common_functions.h"
 
-static _Bool is_movable(const Boat* boat) {
+static _Bool is_movable(const Boat *boat) {
     return boat->size == boat->health_points;
 }
 
@@ -18,13 +18,14 @@ static int get_nbr_of_movable_boats() {
     return remainingBoats;
 }
 
+
 static Boat* get_boat_to_move() {
     const int remainingBoats = get_nbr_of_movable_boats();
     int random;
     int chosenBoat;
     /* Get randomly a boat among the remaining boat */
     random = rand() % remainingBoats + 1;
-    for (int i=0; random > 0; ++i) {
+    for (int i = 0; random > 0; ++i) {
         if (boatList[i].health_points > 0) {
             --random;
             chosenBoat = i;
@@ -75,14 +76,17 @@ static int get_cell_to_move_in(const Boat* boat) {
 static void move_boat(Boat* boat, const int movementSize) {
     int x = boat->position[LEFT];
     int y = boat->position[TOP];
+    /* Set the boat's former position as empty */
     for (int j = 0; j < boat->size; ++j) {
         grid.grid[y][x] = EMPTY;
         update_x_y_in_boat(&x, &y, boat->orientation);
     }
+    /* Move the boat according to its orientation */
     if (boat->orientation == V)
         x = boat->position[LEFT] += movementSize;
     else
         y = boat->position[TOP] += movementSize;
+    /* Set the boat's former position as occupied */
     for (int j = 0; j < boat->size; ++j) {
         grid.grid[y][x] = OCCUPIED;
         update_x_y_in_boat(&x, &y, boat->orientation);
@@ -92,6 +96,6 @@ static void move_boat(Boat* boat, const int movementSize) {
 
 void active_mode() {
     Boat *toMove = get_boat_to_move();
-    int movementSize = get_cell_to_move_in(toMove);
+    const int movementSize = get_cell_to_move_in(toMove);
     move_boat(toMove, movementSize);
 }

@@ -4,6 +4,20 @@
 
 #include "../headers/gui_homepage.h"
 
+static void display_all_buttons(const Button_list buttonList) {
+    for (Button_list_elem *temp = buttonList.first; temp != NULL; temp = temp->next) {
+        display_button(temp->this);
+        if (!strcmp(temp->this->text, "no"))
+            if (temp->this->isActive) {
+                SDL_Color color = {240, 240, 240};
+                TTF_Font *font = TTF_OpenFont("./font/SEGOEUI.ttf", 18);
+                display_text("Difficulty :", font, &color, SCREEN_WIDTH / 2 + 10, 170, 0, 1);
+                display_text("Game mode :", font, &color, SCREEN_WIDTH / 2 + 10, 250, 0, 1);
+                TTF_CloseFont(font);
+            }
+    }
+}
+
 static void display_homepage_title(TTF_Font *title_font, SDL_Color *color) {
     display_text("Do you want to load", title_font, color, SCREEN_WIDTH / 2, 40, 1, 1);
     display_text("a previous game ?", title_font, color, SCREEN_WIDTH / 2, 80, 1, 1);
@@ -136,6 +150,7 @@ static SDL_bool homepage_button_click(Button *button, Button_list *buttonList, T
     return SDL_TRUE;
 }
 
+
 const char *home_screen(Game_parameters *gameParameters) {
     TTF_Font *title_font = TTF_OpenFont("./font/SEGOEUI.ttf", 24);
     TTF_Font *button_font = TTF_OpenFont("./font/SEGOEUI.ttf", 12);
@@ -156,8 +171,10 @@ const char *home_screen(Game_parameters *gameParameters) {
             hovered = get_hovered_button(buttonList);
             switch (event.type) {
                 case SDL_WINDOWEVENT:
-                    if (event.window.event == SDL_WINDOWEVENT_CLOSE)
-                        run = SDL_FALSE;
+                    if (event.window.event == SDL_WINDOWEVENT_CLOSE) {
+                        quit_page(title_font, button_font, &buttonList);
+                        exit(0);
+                    }
                     break;
                 case SDL_MOUSEBUTTONDOWN:
                     if (event.button.button == SDL_BUTTON_LEFT) {
@@ -175,9 +192,6 @@ const char *home_screen(Game_parameters *gameParameters) {
             SDL_RenderPresent(app.renderer);
         }
     }
-    TTF_CloseFont(title_font);
-    TTF_CloseFont(button_font);
     gameParameters->fileName = get_file_to_load(buttonList);
-    while (buttonList.first != NULL)
-        remove_button(&buttonList, buttonList.first->this);
+    quit_page(title_font, button_font, &buttonList);
 }

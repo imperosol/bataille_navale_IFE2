@@ -9,10 +9,10 @@ void initialize_SDL() {
         printf("window initialization failure due to : %s", SDL_GetError());
         exit(EXIT_FAILURE);
     }
-/*    if (IMG_Init(IMG_INIT_PNG) == -1) {
+    if (IMG_Init(IMG_INIT_PNG) == -1) {
         printf("window initialization failure due to");
         exit(EXIT_FAILURE);
-    }*/
+    }
     if (SDL_Init(TTF_Init()) == -1) {
         printf("window initialization failure due to");
         exit(EXIT_FAILURE);
@@ -82,19 +82,6 @@ void display_button(const Button *button) {
                  1, 1);
 }
 
-void display_all_buttons(const Button_list buttonList) {
-    for (Button_list_elem *temp = buttonList.first; temp != NULL; temp = temp->next) {
-        display_button(temp->this);
-        if (!strcmp(temp->this->text, "no"))
-            if (temp->this->isActive) {
-                SDL_Color color = {240, 240, 240};
-                TTF_Font *font = TTF_OpenFont("./font/SEGOEUI.ttf", 18);
-                display_text("Difficulty :", font, &color, SCREEN_WIDTH / 2 + 10, 170, 0, 1);
-                display_text("Game mode :", font, &color, SCREEN_WIDTH / 2 + 10, 250, 0, 1);
-                TTF_CloseFont(font);
-            }
-    }
-}
 
 Button *get_hovered_button(const Button_list buttonList) {
     for (Button_list_elem *temp = buttonList.first; temp != NULL; temp = temp->next) {
@@ -151,4 +138,11 @@ void control_framerate(const Uint32 lastTick) {
     const int sleep = 1000 / FPS - (currentTick - lastTick);
     if(sleep > 0)
         SDL_Delay(sleep);
+}
+
+void quit_page(TTF_Font * title_font, TTF_Font * button_font, Button_list * buttonList) {
+    TTF_CloseFont(title_font);
+    TTF_CloseFont(button_font);
+    while (buttonList->first != NULL)
+        remove_button(buttonList, buttonList->first->this);
 }

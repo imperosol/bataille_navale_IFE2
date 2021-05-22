@@ -34,7 +34,7 @@ void display_text(const char *text, TTF_Font *font, SDL_Color *color, const int 
 
 void display_button(const Button* button);
 
-void display_all_buttons(const Button_list buttonList);
+//void display_all_buttons(const Button_list buttonList);
 
 Button *get_hovered_button(const Button_list buttonList);
 
@@ -49,6 +49,8 @@ void deactivate_backup_buttons(const Button_list *buttonList);
 Button *get_button_by_name(const Button_list *buttonList, const char *text);
 
 void control_framerate(const Uint32 lastTick);
+
+void quit_page(TTF_Font * title_font, TTF_Font * button_font, Button_list * buttonList);
 
 
 struct App {

@@ -15,6 +15,8 @@ static void create_new_game_buttons(Button_list *buttonList, TTF_Font *font, SDL
 
 static _Bool is_new_game_button(const Button* button);
 
+static void display_all_buttons(const Button_list buttonList);
+
 static _Bool all_parameters_given(Button_list* buttonList);
 
 static void remove_new_game_button(Button_list *buttonList);
