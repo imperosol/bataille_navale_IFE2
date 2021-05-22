@@ -44,13 +44,14 @@ FILE *open_file(const char *fileName, const char *mode) {
 }
 #endif
 
-int input_word(char **word) {
+void input_word(char **word) {
+    if (*word != NULL)
+        free(*word);
     char temp[40];
     fgets(temp, 40, stdin);
     temp[strlen(temp) - 1] = '\0';
     *word = safe_malloc(sizeof(char) * strlen(temp) + 1);
     strcpy(*word, temp);
-    return 0;
 }
 
 void clear_buffer(void) {

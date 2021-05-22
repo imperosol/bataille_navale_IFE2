@@ -6,6 +6,9 @@
 #define BATAILLE_NAVALE_UTBM_STRUCT_H
 
 #include <time.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
+#include <SDL2/SDL_image.h>
 
 #define and &&
 #define or ||
@@ -67,5 +70,36 @@ typedef enum {
     BOMB,
     SIMPLE_MISSILE
 } AttackType_e;
+
+/* structs for the gui */
+
+
+typedef struct {
+    char text[20];
+    _Bool isHovered;
+    _Bool isBackup;
+    _Bool isActive;
+    SDL_Rect rect;
+    TTF_Font * font;
+    SDL_Color * fontColor;
+} Button;
+
+typedef struct Button_list_elem Button_list_elem;
+struct Button_list_elem {
+    Button* this;
+    Button_list_elem* next;
+};
+
+typedef struct {
+    Button_list_elem * first;
+} Button_list;
+
+typedef struct {
+    Mode_e mode;
+    Difficulty_e difficulty;
+    char *fileName;
+} Game_parameters;
+
+
 
 #endif //BATAILLE_NAVALE_UTBM_STRUCT_H

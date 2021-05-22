@@ -1,29 +1,30 @@
+
 #include "headers/nyanpasu_lib.h"
 #include "headers/struct.h"
 #include "headers/initialization.h"
 #include "headers/missile_attack.h"
 #include "headers/player_interaction.h"
 #include "headers/active_mode.h"
+#include "headers/gui.h"
+#include "headers/gui_homepage.h"
+#include "headers/gui_main_game.h"
 
 
-int main() {
+int main(int argc, char **argv) {
     srand(time(NULL));
-    Difficulty_e difficulty;
-    Mode_e mode;
+    Game_parameters gameParameters;
+    initialize_SDL();
+    create_window("bataille navale");
+    home_screen(&gameParameters);
+    if (gameParameters.fileName != NULL)
+        load_game_gui(&gameParameters.difficulty, &gameParameters.mode, gameParameters.fileName);
+    else
+        initialize_new_game(gameParameters.difficulty);
 
-    if (ask_if_load_game()) {
-        load_game(&difficulty, &mode);
-    } else {
-        difficulty = ask_difficulty();
-        mode = ask_mode();
-        initialize_new_game(difficulty);
-    }
+    main_game_screen(&gameParameters);
 
-    puts("\n\t-------------\n\t|Game begins|\n\t-------------\n");
-    while (player_turn(mode, difficulty) == CONTINUE)
-        active_mode();
-
-    puts("Press enter to exit");
-    clear_buffer();
+    SDL_DestroyWindow(app.window);
+    SDL_DestroyRenderer(app.renderer);
+    SDL_Quit();
     return 0;
 }

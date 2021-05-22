@@ -114,14 +114,27 @@ static FILE *get_backup_file(void) {
     return backup;
 }
 
-
-
 void load_game(Difficulty_e *difficulty, Mode_e *mode) {
     initialize_grid();
     show_backup_files();
     FILE *load = get_backup_file();
     fread(difficulty, sizeof(*difficulty), 1, load);
     fread(&mode, sizeof(*mode), 1, load);
+    fread(&inventory, sizeof(unsigned short), 4, load);
+    fread(&boatList, sizeof(*boatList), 5, load);
+    for (int i = 0; i < grid.height; ++i) {
+        fread(grid.grid[i], sizeof(char), grid.width, load);
+    }
+    fclose(load);
+}
+
+void load_game_gui(Difficulty_e *difficulty, Mode_e *mode, const char* fileName) {
+    char directory[40] = "save/";
+    strcat(directory, fileName);
+    initialize_grid();
+    FILE *load = open_file(directory, "rb");
+    fread(difficulty, sizeof(*difficulty), 1, load);
+    fread(mode, sizeof(*mode), 1, load);
     fread(&inventory, sizeof(unsigned short), 4, load);
     fread(&boatList, sizeof(*boatList), 5, load);
     for (int i = 0; i < grid.height; ++i) {

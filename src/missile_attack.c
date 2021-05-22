@@ -46,26 +46,24 @@ static void shot_on_cell(const int line, const int row, const _Bool isTactical) 
 }
 
 void fire_artillery(const int line, const int row) {
-    for (int i = 0; i < grid.width; ++i) {
+    for (int i = 0; i < grid.width; ++i)
         shot_on_cell(line, i, 0);
-    }
-    for (int i = 0; i < grid.height; ++i) {
+    for (int i = 0; i < grid.height; ++i)
         shot_on_cell(i, row, 0);
-    }
     inventory.artillery--;
 }
 
 void fire_bomb(const int line, const int row){
     for (int i = -1; i < 2; ++i) {
         for (int j = -1; j < 2; ++j) {
-            if (0 <= line + i and line + i < grid.height
-            and 0 <= row + j and row + j < grid.width) {
+            if (is_cell_in_grid(line + i, row + j))
                 shot_on_cell(line + i, row + j, 0);
-            }
         }
         if (i != 0) {
-            shot_on_cell(line + i * 2, row, 0);
-            shot_on_cell(line, row + i * 2, 0);
+            if (is_cell_in_grid(line + i * 2, row))
+                shot_on_cell(line + i * 2, row, 0);
+            if (is_cell_in_grid(line, row + i * 2))
+                shot_on_cell(line, row + i * 2, 0);
         }
     }
     inventory.bomb--;

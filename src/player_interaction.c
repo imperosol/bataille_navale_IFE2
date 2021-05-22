@@ -96,7 +96,8 @@ static unsigned short *ask_coordinates(void) {
             if (strlen(choiceStr) == 1 and isalpha(choiceStr[0]) and tolower(choiceStr[0]) < 'k')
                 coord[i] = tolower(choiceStr[0]) - 'a';
             else
-                coord[i] = str_to_int(choiceStr) - 1;
+//                coord[i] = str_to_int(choiceStr) - 1;
+                coord[i] = atoi(choiceStr) - 1;
             free(choiceStr);
             if (coord[i] < 0 or coord[i] > 9)
                 puts("Invalid");

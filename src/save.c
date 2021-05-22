@@ -5,7 +5,9 @@
 #include "../headers/save.h"
 
 void save(const char *fileName, Difficulty_e difficulty, Mode_e mode) {
-    FILE * save = open_file(fileName, "wb");
+    char directory[45] = "save/";
+    strcat(directory, fileName);
+    FILE * save = open_file(directory, "wb");
     fwrite(&difficulty, sizeof(difficulty), 1, save);
     fwrite(&mode, sizeof(mode), 1, save);
     fwrite(&inventory, sizeof(unsigned short), 4, save);
@@ -17,7 +19,7 @@ void save(const char *fileName, Difficulty_e difficulty, Mode_e mode) {
 }
 
 void autosave(Difficulty_e difficulty, Mode_e mode) {
-    save("save/autosave", difficulty, mode);
+    save("autosave", difficulty, mode);
 }
 
 void manual_save(Difficulty_e difficulty, Mode_e mode) {
